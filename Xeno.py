@@ -25,7 +25,7 @@ intents.guilds = True
 intents.messages = True
 intents.guild_messages = True
 Xeno = commands.AutoShardedBot(command_prefix='$', shard_count=shard_count, intents=intents)
-BOT_TOKEN = "MTEyNzg3Nzc5NTEyOTg2ODM0Mg.GvBGhK.AKDUkdWx49fJdbH4Oq4JAIWWXN0XdU8WewyHMI"
+BOT_TOKEN = "{Bot_Token_Goes_here}"
 
 BASE_URL = "https://discord.com/api/v9"
 HEADER = {
