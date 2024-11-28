@@ -1,19 +1,8 @@
-import discord
-import asyncio
-import time
-import aiohttp
-import socket
-import math 
-import string
-import random
-import json
-import base64
-import threading
-import requests
+import discord, asyncio, time, aiohttp, socket, base64, string, random, requests, threading, 
+import colorama 
 from colorama import Fore, Style
 from discord.ext import commands
 
-######## CONTENTS
 shard_count = 2 
 intents = discord.Intents.all()
 intents.guilds = True
@@ -23,13 +12,7 @@ intents.guilds = True
 intents.messages = True
 intents.guild_messages = True
 Xeno = commands.AutoShardedBot(command_prefix='$', shard_count=shard_count, intents=intents)
-BOT_TOKEN = "{Bot_Token_Goes_here}"
-
-BASE_URL = "https://discord.com/api/v9"
-HEADER = {
-    "Authorization": f"Bot {BOT_TOKEN}",
-    "Content-Type": "application/json"
-}
+BOT_TOKEN = "INSERT HERE" 
 CHANNEL_NAMES = ["Heil-Zilla", "Comeback", "Heil PDA"] 
 
 @Xeno.event
@@ -73,9 +56,6 @@ async def on_ready():
 async def massban(ctx):
     guild = ctx.guild
     members = guild.members
-    total_banned_members = 0
-    batch_size = 5  # You can adjust the batch size as needed
-    num_batches = math.ceil(len(members) / batch_size)
 
     async def ban_member(member):
         nonlocal total_banned_members
@@ -155,11 +135,11 @@ async def gnuke(ctx):
 async def uinfo(ctx):
   user = ctx.message.author
   embed = discord.Embed(title=f"{user.name} Info", color=000000)
-  embed.add_field(name="Name", value=user.name)
-  embed.add_field(name="ID", value=user.id)
-  embed.add_field(name="Discriminator", value=user.discriminator)
-  embed.add_field(name="Status", value=user.status)
-  embed.add_field(name="Account created at",
+  embed.add_field(name="Name:", value=user.name)
+  embed.add_field(name="ID:", value=user.id)
+  embed.add_field(name="Discriminator:", value=user.discriminator)
+  embed.add_field(name="Status:", value=user.status)
+  embed.add_field(name="Account created at:",
                   value=user.created_at.strftime("%b %d, %Y"))
   embed.set_thumbnail(url=user.avatar_url)
   await ctx.send(embed=embed)
