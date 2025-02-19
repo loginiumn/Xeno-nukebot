@@ -1,4 +1,7 @@
-import discord, asyncio, time, aiohttp, socket, base64, string, random, requests, threading, 
+# Xeno Nukebot is a tool that nukes servers by using the following modules below. 
+
+import discord, asyncio, time, aiohttp, 
+socket, base64, string, random, requests, threading, 
 import colorama 
 from colorama import Fore, Style
 from discord.ext import commands
