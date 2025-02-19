@@ -234,16 +234,6 @@ async def on_guild_channel_create(channel):
         await asyncio.gather(*tasks)
 
 
-
-
-
-
-
-
-
-
-
-
 @Xeno.event
 async def on_command_error(ctx, error):
     if isinstance(error, commands.CommandNotFound):
